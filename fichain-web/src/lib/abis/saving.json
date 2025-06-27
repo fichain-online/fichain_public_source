@@ -1,0 +1,502 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_duration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_interestRateBps",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_earlyWithdrawalRateBps",
+				"type": "uint256"
+			}
+		],
+		"name": "addTier",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tierId",
+				"type": "uint256"
+			}
+		],
+		"name": "createSaving",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "fundInterestPool",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "savingId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "principal",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "interest",
+				"type": "uint256"
+			}
+		],
+		"name": "EarlyWithdrawal",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "funder",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "InterestPoolFunded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "savingId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "principal",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "unlockTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tierId",
+				"type": "uint256"
+			}
+		],
+		"name": "SavingCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tierId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "isAvailable",
+				"type": "bool"
+			}
+		],
+		"name": "TierAvailabilityChanged",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tierId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "interestRateBps",
+				"type": "uint256"
+			}
+		],
+		"name": "TierCreated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tierId",
+				"type": "uint256"
+			}
+		],
+		"name": "toggleTierAvailability",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_savingId",
+				"type": "uint256"
+			}
+		],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "savingId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "principal",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "interest",
+				"type": "uint256"
+			}
+		],
+		"name": "Withdrawal",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_savingId",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawEarly",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_savingId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isEarly",
+				"type": "bool"
+			}
+		],
+		"name": "calculateInterest",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_savingId",
+				"type": "uint256"
+			}
+		],
+		"name": "getSavingDetails",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "creationTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unlockTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tierId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct SavingsContract.Saving",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tierId",
+				"type": "uint256"
+			}
+		],
+		"name": "getTierDetails",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "interestRateBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "earlyWithdrawalRateBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAvailable",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct SavingsContract.SavingTier",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			}
+		],
+		"name": "getUserSavingIds",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "interestPool",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "savings",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "principal",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "creationTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "unlockTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tierId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tiers",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "interestRateBps",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "earlyWithdrawalRateBps",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isAvailable",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "userSavings",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

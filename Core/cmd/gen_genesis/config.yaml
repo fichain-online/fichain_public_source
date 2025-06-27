@@ -1,0 +1,13 @@
+NodeID: "1"
+Version: 1
+PrivateKey: "76049e403c7c3afd30ba4cbbbc48212d6059757e95ff6f0a6a609e493c9a0812"
+TCPServerAddress: "127.0.0.1:9000"
+BootAddress: ""
+
+StatesDBPath: "./db/states"
+AuthorityValidatorDBPath: "./db/authority_validator"
+AuthorityObserverDBPath: "./db/authority_observer"
+AuthorityFiatReserveDBPath: "./db/fiat_reserve"
+
+
+

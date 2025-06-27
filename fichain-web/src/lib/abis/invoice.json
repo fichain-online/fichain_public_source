@@ -1,0 +1,439 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_initialOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "address payable",
+				"name": "_initialGovernmentAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_initialTaxRateBps",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "OwnableInvalidOwner",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "OwnableUnauthorizedAccount",
+		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "InvoiceCancelled",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "payee",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "payer",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "totalAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "InvoiceCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "payer",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountPaid",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "taxAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "InvoicePaid",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newGovernmentAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newTaxRateBps",
+				"type": "uint256"
+			}
+		],
+		"name": "TaxInfoUpdated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_invoiceId",
+				"type": "uint256"
+			}
+		],
+		"name": "cancelInvoice",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_payer",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unitPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantity",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Invoicing.InvoiceItem[]",
+				"name": "_items",
+				"type": "tuple[]"
+			}
+		],
+		"name": "createInvoice",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_invoiceId",
+				"type": "uint256"
+			}
+		],
+		"name": "getInvoiceDetails",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "payee",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "payer",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "enum Invoicing.InvoiceStatus",
+				"name": "status",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_invoiceId",
+				"type": "uint256"
+			}
+		],
+		"name": "getInvoiceItems",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unitPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantity",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Invoicing.InvoiceItem[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "governmentAddress",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "invoices",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "payee",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "payer",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "enum Invoicing.InvoiceStatus",
+				"name": "status",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nextInvoiceId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_invoiceId",
+				"type": "uint256"
+			}
+		],
+		"name": "payInvoice",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_newGovernmentAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_newTaxRateBps",
+				"type": "uint256"
+			}
+		],
+		"name": "setTaxInfo",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "taxRateBps",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

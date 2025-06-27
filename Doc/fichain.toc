@@ -1,0 +1,22 @@
+\selectlanguage *{vietnamese}
+\contentsline {section}{\numberline {1}Tóm tắt dự án}{3}{section.1}%
+\contentsline {section}{\numberline {2}Mô tả chi tiết}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Bối cảnh và vấn đề}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Giải pháp đề xuất: Nền tảng Fichain}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Công nghệ cốt lõi}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Kiến trúc hệ thống}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Giá trị thực tiễn}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Đối với Ngân hàng và Tổ chức Tài chính}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Đối với Nền kinh tế và Xã hội}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Tính sáng tạo}{7}{section.4}%
+\contentsline {section}{\numberline {5}Tính khả thi và khả năng mở rộng}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Tính khả thi kỹ thuật}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Tính khả thi tài chính và mô hình kinh doanh}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Tính khả thi pháp lý}{9}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Khả năng mở rộng (Scalability)}{9}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Lộ trình Phát triển Chi tiết (Roadmap)}{9}{section.6}%
+\contentsline {section}{\numberline {7}Đội ngũ}{10}{section.7}%
+\contentsline {section}{\numberline {8}Các khó khăn và bài học kinh nghiệm}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Khó khăn đã gặp}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Bài học kinh nghiệm}{11}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Tài liệu tham khảo}{12}{section.9}%

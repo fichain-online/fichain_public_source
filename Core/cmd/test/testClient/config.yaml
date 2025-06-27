@@ -1,0 +1,8 @@
+NodeID: "1"
+Version: 1
+PrivateKey: "907b1b41a4f52512a489150d93fd35f542a390d4c70ef23280459afda65322e2"
+TCPServerAddress: "127.0.0.1:9000"
+
+BootAddress: "127.0.0.1:9000"
+
+

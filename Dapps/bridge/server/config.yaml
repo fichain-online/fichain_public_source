@@ -1,0 +1,65 @@
+# -----------------------------------------------------------------------------
+# Fichain Explorer Configuration File
+# -----------------------------------------------------------------------------
+# This file contains all the settings for the Fichain Explorer application.
+# It is divided into sections that correspond to different components of the system.
+#
+# Creation Date: June 10, 2025
+# -----------------------------------------------------------------------------
+
+APIAddress: ":8081"
+# Core configuration settings shared across Fichain components.
+# This section is mapped to the 'core_config.Config' struct.
+core:
+  # A unique identifier for this specific node on the network.
+  node_id: "simple-bridge-server"
+
+  # The configuration version, used for compatibility checks.
+  version: 1
+
+  # The private key for the node.
+  # IMPORTANT: For production, it is strongly recommended to load this from an
+  # environment variable or a secure secret management system instead of hardcoding it.
+  privatekey: "0x6bfc832f1ff0792fedddc8f62182f7ad0cc59e036a2788a7f0d454c2ba12a0cd"
+
+  # The address of a bootstrap node to connect to for discovering other peers.
+  # This can be the address of another node you control or a public bootstrap node.
+  bootaddress: "127.0.0.1:9000"
+
+
+# Database configuration specific to the Explorer service.
+
+database:
+  # The hostname or IP address of the database server.
+  host: "localhost"
+
+  # The port the database server is listening on.
+  port: "5432" # Default PostgreSQL port
+
+  # The username for connecting to the database.
+  user: "bridge_server"
+
+  # The password for the database user.
+  # IMPORTANT: Like the private key, this should be loaded from a secure source
+  # in a production environment, not hardcoded.
+  # Example: password: ${DB_PASSWORD}
+  password: "super_secret_database_password"
+
+  # The name of the specific database to connect to.
+  dbname: "fichain_bridge"
+
+  # The SSL mode for the database connection.
+  # Common values: "disable", "require", "verify-ca", "verify-full"
+  sslmode: "disable"
+
+token_map:
+  USDT: "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd"
+  ETH: "0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378"
+  BTC: "0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8"
+
+fichain_token_map:
+  USDT: "0xF4b578459995d24E0DFc3d24E2a7539fCF2dd5dD"
+  ETH: "0x42a4F77737b3b0cd71326F1EC213B85De8C81Fc2"
+  BTC: "0xCfD73870154A10e35f20ab9992f6f4dEf344829D"
+  
+NetworkConnectionString: "https://data-seed-prebsc-1-s1.binance.org:8545/" # BSC testnet

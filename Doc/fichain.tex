@@ -1,0 +1,62 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+% --- CÁC GÓI CHO XELATEX ---
+\usepackage{polyglossia}
+\setdefaultlanguage{vietnamese}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% --- CÁC GÓI ĐỊNH DẠNG ---
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{amsmath}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=red]{hyperref}
+
+% --- THÔNG TIN DỰ ÁN ---
+\title{
+\vspace{-1.5cm}
+\includegraphics[width=0.3\textwidth]{logo.png} \\[1em]
+Fichain: Nền Tảng Blockchain Layer 1 \\
+Kiến Tạo Tương Lai Ngân Hàng Số
+}
+
+\author{%
+  Phan Đình Minh Hiếu \\
+  Phạm Bảo Hân \\
+  Trần Ngọc Hải \\
+  Nguyễn Di Nguy \\
+  Hà Kiệt Hùng
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents % Tạo mục lục tự động
+\newpage
+
+% --- NẠP NỘI DUNG TỪ CÁC TỆP CON ---
+\input{sections/00_tom_tat.tex}
+\input{sections/01_mo_ta_chi_tiet.tex}
+\input{sections/02_gia_tri_thuc_tien.tex}
+\input{sections/03_tinh_sang_tao.tex}
+\input{sections/04_tinh_kha_thi.tex}
+\input{sections/05_ke_hoach_phat_trien.tex}
+\input{sections/06_doi_ngu.tex}
+\input{sections/07_kho_khan_bai_hoc.tex}
+
+\newpage % Ngắt trang trước khi tới phần tài liệu tham khảo
+
+% --- TÀI LIỆU THAM KHẢO ---
+\section{Tài liệu tham khảo}
+\bibliographystyle{plain} % Kiểu trình bày danh mục tham khảo
+\bibliography{references} % Gọi tệp references.bib
+
+\end{document}

@@ -1,0 +1,5 @@
+node_id: "gold-invest-deploy-sc"
+version: 1
+privatekey: "e9f337e27fd0d7d9dae8d038bd089e2638c8f3a129fa815aca4a3f230438ce9e"
+bootaddress: "127.0.0.1:9000"
+

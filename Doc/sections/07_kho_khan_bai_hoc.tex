@@ -1,0 +1,39 @@
+\section{Các khó khăn và bài học kinh nghiệm}
+Trong quá trình nghiên cứu và phát triển Fichain, đội ngũ đã đối mặt với nhiều thách thức đặc thù, từ đó rút ra những bài học kinh nghiệm quý báu định hình nên kiến trúc và chiến lược của dự án.
+
+\subsection{Khó khăn đã gặp}
+\begin{itemize}
+
+     \item \textbf{Làm chủ và Xây dựng Công nghệ Lõi Blockchain từ Con số Không:}
+       Để đạt được sự tùy biến và tối ưu tuyệt đối cho ngành tài chính, đội ngũ đã lựa chọn không sử dụng các framework blockchain có sẵn (như Cosmos SDK\cite{kwon2016cosmos} hay Substrate\cite{substrate_docs}) mà tự xây dựng nền tảng từ các thành phần cơ bản. Điều này đặt ra một khối lượng công việc khổng lồ và thách thức kỹ thuật nền tảng:
+    \begin{itemize}
+        \item \textbf{Tích hợp sâu Ethereum Virtual Machine (EVM):} Đây không chỉ là việc "nhúng" EVM, mà là một quá trình phức tạp để kết nối máy ảo với lớp quản lý trạng thái (state management) của Fichain, đảm bảo việc đọc/ghi trạng thái và xử lý `gas` diễn ra chính xác, hiệu quả và tương thích với các công cụ phát triển của hệ sinh thái Ethereum.
+        \item \textbf{Phát triển lớp mạng P2P (Peer-to-Peer):} Phải tự thiết kế và triển khai toàn bộ giao thức mạng, bao gồm cơ chế khám phá node (node discovery), lan truyền giao dịch và khối (gossip protocol), và đồng bộ hóa chuỗi (chain synchronization) một cách an toàn và tối ưu.
+    \end{itemize}
+
+    \item \textbf{Cân bằng giữa Hiệu suất, Bảo mật và Tuân thủ trong cơ chế PoSA:}
+    Việc thiết kế cơ chế đồng thuận PoSA là một bài toán cân bằng tinh vi.
+    \begin{itemize}
+        \item Nếu quá chú trọng vào hiệu suất (bằng cách giảm số lượng validator), hệ thống có thể trở nên quá tập trung và kém an toàn.
+        \item Ngược lại, nếu yêu cầu về stake (ký quỹ) quá cao để tăng cường an ninh, sẽ tạo ra rào cản lớn cho các tổ chức tài chính nhỏ hơn muốn tham gia mạng lưới.
+        \item Việc tích hợp các yếu tố "Authority" (định danh) vào thuật toán đòi hỏi phải giải quyết vấn đề quản trị: Ai có quyền cấp và thu hồi "Authority"? Quy trình này diễn ra như thế nào để đảm bảo tính công bằng?
+    \end{itemize}
+
+    \item \textbf{Tích hợp với hệ thống Core Banking kế thừa:}
+    Việc kết nối một hệ thống phân tán, bất biến (blockchain) với một hệ thống tập trung, có thể chỉnh sửa (core banking) là một thách thức lớn về kỹ thuật. Các vấn đề chính bao gồm độ trễ dữ liệu, đảm bảo tính nhất quán (consistency) giữa hai hệ thống, và thiết kế các giao thức giao tiếp (API/Adapter) an toàn, hiệu quả.
+\end{itemize}
+
+\subsection{Bài học kinh nghiệm}
+\begin{itemize}
+    \item \textbf{Công nghệ phải đi đôi với quy trình vận hành:}
+    Bài học lớn nhất từ việc thiết kế native coin dựa trên VND là một giải pháp blockchain cho ngành tài chính không thể chỉ tồn tại trên phương diện công nghệ. Thành công của nó phụ thuộc rất lớn vào việc xây dựng một \textbf{khung pháp lý và quy trình vận hành (operational framework)} chặt chẽ giữa thế giới on-chain và off-chain. Cần có sự tham gia của các bên thứ ba như đơn vị kiểm toán, ngân hàng lưu ký để đảm bảo tính minh bạch và tin cậy.
+
+    \item \textbf{Tầm quan trọng của việc mô phỏng và kiểm thử thực tế (Simulation \& Real-world Testing):}
+    Đối với cơ chế đồng thuận, không có lý thuyết nào là hoàn hảo. Đội ngũ đã học được rằng cách tốt nhất để tinh chỉnh các tham số (số lượng validator, mức stake tối thiểu, cơ chế phạt...) là thông qua việc \textbf{xây dựng các môi trường mô phỏng} các kịch bản tấn công và chạy thử nghiệm trong một mạng testnet có điều kiện gần giống với thực tế nhất.
+
+    \item \textbf{Xây dựng "Lớp Chuyển đổi" thay vì cố gắng "Thay thế":}
+    Thay vì cố gắng thay thế hoàn toàn hệ thống cũ, bài học kinh nghiệm là nên tập trung vào việc \textbf{xây dựng các "lớp chuyển đổi" (Adapter Layers) thông minh}. Các lớp này đóng vai trò là cầu nối, xử lý việc phiên dịch, đệm dữ liệu và đồng bộ hóa giữa Fichain và các hệ thống core banking. Cách tiếp cận này giúp giảm thiểu rủi ro, cho phép triển khai từng phần và mang lại giá trị nhanh hơn cho đối tác.
+
+    \item \textbf{Tập trung là sức mạnh:}
+    Trong một thế giới blockchain đầy rẫy các dự án "làm tất cả mọi thứ", bài học cốt lõi là việc \textbf{tập trung giải quyết một bài toán cụ thể cho một ngành dọc cụ thể} (tài chính - ngân hàng) là con đường hiệu quả nhất. Sự tập trung này cho phép đưa ra những quyết định thiết kế táo bạo và phù hợp (như dùng VND làm native coin), điều mà các nền tảng đa năng không thể làm được.
+\end{itemize}

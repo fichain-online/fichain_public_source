@@ -1,0 +1,42 @@
+[
+  {
+    "name": "transfer for bridge",
+    "to": "0x8036bF4b1169a2A5d2FAa07D5a98142b373245c8",
+    "data": "",
+    "amount": "1000000000000000000000000",
+    "gas": 21000,
+    "gas_price": "100000000000000"
+  },
+  {
+    "name": "mint USDT for bridge",
+    "to": "0xF4b578459995d24E0DFc3d24E2a7539fCF2dd5dD",
+    "data": "0x40c10f190000000000000000000000008036bf4b1169a2a5d2faa07d5a98142b373245c800000000000000000000000000000000000000000000d3c21bcecceda1000000",
+    "amount": "0",
+    "gas": 300000,
+    "gas_price": "100000000000000"
+  },
+  {
+    "name": "mint ETH for bridge",
+    "to": "0x42a4F77737b3b0cd71326F1EC213B85De8C81Fc2",
+    "data": "0x40c10f190000000000000000000000008036bf4b1169a2a5d2faa07d5a98142b373245c800000000000000000000000000000000000000000000d3c21bcecceda1000000",
+    "amount": "0",
+    "gas": 300000,
+    "gas_price": "100000000000000"
+  },
+  {
+    "name": "mint BTC for bridge",
+    "to": "0xCfD73870154A10e35f20ab9992f6f4dEf344829D",
+    "data": "0x40c10f190000000000000000000000008036bf4b1169a2a5d2faa07d5a98142b373245c800000000000000000000000000000000000000000000d3c21bcecceda1000000",
+    "amount": "0",
+    "gas": 300000,
+    "gas_price": "100000000000000"
+  },
+  {
+    "name": "transfer for gold invest server",
+    "to": "0x2D7BC2704502443843ab6BFFd68249E4f5c4D5F5",
+    "data": "",
+    "amount": "10000000000000000000000000",
+    "gas": 21000,
+    "gas_price": "100000000000000"
+  }
+]

@@ -1,0 +1,53 @@
+# -----------------------------------------------------------------------------
+# Fichain Explorer Configuration File
+# -----------------------------------------------------------------------------
+# This file contains all the settings for the Fichain Explorer application.
+# It is divided into sections that correspond to different components of the system.
+#
+# Creation Date: June 10, 2025
+# -----------------------------------------------------------------------------
+
+APIAddress: ":8080"
+# Core configuration settings shared across Fichain components.
+# This section is mapped to the 'core_config.Config' struct.
+core:
+  # A unique identifier for this specific node on the network.
+  node_id: "fichain-explorer-node-01"
+
+  # The configuration version, used for compatibility checks.
+  version: 1
+
+  # The private key for the node.
+  # IMPORTANT: For production, it is strongly recommended to load this from an
+  # environment variable or a secure secret management system instead of hardcoding it.
+  privatekey: "0xb185138661f1b075e6ae06789f25f1a8654642e2ed6d3045f63a6b41d37c2cac"
+
+  # The address of a bootstrap node to connect to for discovering other peers.
+  # This can be the address of another node you control or a public bootstrap node.
+  bootaddress: "127.0.0.1:9000"
+
+
+# Database configuration specific to the Explorer service.
+
+database:
+  # The hostname or IP address of the database server.
+  host: "localhost"
+
+  # The port the database server is listening on.
+  port: "5432" # Default PostgreSQL port
+
+  # The username for connecting to the database.
+  user: "explorer_admin"
+
+  # The password for the database user.
+  # IMPORTANT: Like the private key, this should be loaded from a secure source
+  # in a production environment, not hardcoded.
+  # Example: password: ${DB_PASSWORD}
+  password: "super_secret_database_password"
+
+  # The name of the specific database to connect to.
+  dbname: "fichain_explorer"
+
+  # The SSL mode for the database connection.
+  # Common values: "disable", "require", "verify-ca", "verify-full"
+  sslmode: "disable"

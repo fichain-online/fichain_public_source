@@ -1,0 +1,8 @@
+core:
+  node_id: "gold-invest-server"
+  version: 1
+  privatekey: "0xe9f337e27fd0d7d9dae8d038bd089e2638c8f3a129fa815aca4a3f230438ce9e"
+  bootaddress: "127.0.0.1:9000"
+
+GoldTokenAddress: "0x9BC715aEeBcF34554a5F221848013108d2073d95"
+GoldInvestAddress: "0x23573Ff8ECE6c5Eb6d34a0E99DeE1b9d3fBc5e49"

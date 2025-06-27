@@ -1,0 +1,111 @@
+\begin{thebibliography}{10}
+
+\bibitem{bsn2020}
+Blockchain-based service network (bsn), 2020.
+\newblock \url{https://bsnbase.io}.
+
+\bibitem{ebsi2020}
+European blockchain services infrastructure (ebsi), 2020.
+\newblock \url{https://digital-strategy.ec.europa.eu/en/policies/ebsi}.
+
+\bibitem{BinanceAcademy_PoSA}
+{Binance Academy}.
+\newblock Proof of staked authority (posa), June 2025.
+\newblock Accessed: 2025-06-15.
+
+\bibitem{buterin2014ethereum}
+Vitalik Buterin.
+\newblock Ethereum: A next-generation smart contract and decentralized
+  application platform.
+\newblock Technical report, Ethereum Foundation, 2014.
+\newblock Accessed on 2025-06-14.
+
+\bibitem{Vietnamese2023ND13}
+{Chính phủ}.
+\newblock Nghị định số 13/2023/nĐ-cp về bảo vệ dữ liệu cá
+  nhân.
+\newblock Hệ thống văn bản quy phạm pháp luật, 2023.
+\newblock Ban hành ngày 17 tháng 4 năm 2023, có hiệu lực từ ngày 01
+  tháng 7 năm 2023.
+
+\bibitem{Vietnamese2023ND19}
+{Chính phủ}.
+\newblock Nghị định số 19/2023/nĐ-cp quy định chi tiết một số
+  điều của luật phòng, chống rửa tiền.
+\newblock Hệ thống văn bản quy phạm pháp luật, 2023.
+\newblock Ban hành ngày 28 tháng 4 năm 2023, có hiệu lực cùng ngày
+  với Luật Phòng, chống rửa tiền.
+
+\bibitem{haralayya2021core}
+Bhadrappa Haralayya.
+\newblock Core banking technology and its top 6 implementation challenges.
+\newblock {\em Journal of Advanced Research in Operational and Marketing
+  Management}, 4(1):25--27, 2021.
+
+\bibitem{koteska2017blockchain}
+Bojana Koteska, Elena Karafiloski, and Anastas Mishev.
+\newblock Blockchain implementation quality challenges: a literature.
+\newblock In {\em SQAMIA 2017: 6th workshop of software quality, analysis,
+  monitoring, improvement, and applications}, volume~11, page 2017, 2017.
+
+\bibitem{kwon2016cosmos}
+Jae Kwon and Ethan Buchman.
+\newblock Cosmos: A network of distributed ledgers.
+\newblock Technical report, Cosmos, 2016.
+\newblock Accessed on 2025-06-14.
+
+\bibitem{Vietnamese2023TT09}
+{Ngân hàng Nhà nước Việt Nam}.
+\newblock Thông tư số 09/2023/tt-nhnn hướng dẫn thực hiện một
+  số điều của luật phòng, chống rửa tiền.
+\newblock Hệ thống văn bản quy phạm pháp luật, 2023.
+\newblock Ban hành ngày 28 tháng 7 năm 2023, có hiệu lực từ ngày 28
+  tháng 7 năm 2023.
+
+\bibitem{substrate_docs}
+{Parity Technologies}.
+\newblock {Substrate: The blockchain development framework}, 2025.
+\newblock Accessed on 2025-06-14.
+
+\bibitem{peng2021privacy}
+Li~Peng, Wei Feng, Zheng Yan, Yafeng Li, Xiaokang Zhou, and Shohei Shimizu.
+\newblock Privacy preservation in permissionless blockchain: A survey.
+\newblock {\em Digital Communications and Networks}, 7(3):295--307, 2021.
+
+\bibitem{Vietnamese2022Luat14}
+{Quốc hội}.
+\newblock Luật phòng, chống rửa tiền số 14/2022/qh15.
+\newblock Hệ thống văn bản quy phạm pháp luật, 2022.
+\newblock Thông qua ngày 15 tháng 11 năm 2022, có hiệu lực từ ngày
+  01 tháng 3 năm 2023.
+
+\bibitem{swift_website}
+{Society for Worldwide Interbank Financial Telecommunication (SWIFT)}.
+\newblock {SWIFT}, 2025.
+\newblock Accessed on 2025-06-14.
+
+\bibitem{rocket2019scalable}
+{Team Rocket}.
+\newblock Scalable and probabilistic leaderless bft consensus through
+  metastability.
+\newblock {\em arXiv preprint arXiv:1906.08936}, 2019.
+\newblock Accessed on 2025-06-14.
+
+\bibitem{visa_website}
+{Visa Inc.}
+\newblock {Visa}, 2025.
+\newblock Accessed on 2025-06-14.
+
+\bibitem{wood2014ethereum}
+Gavin Wood.
+\newblock {\em Ethereum: A secure decentralised generalised transaction
+  ledger}.
+\newblock Ethereum Project Yellow Paper, 2014.
+
+\bibitem{yakovenko2017solana}
+Anatoly Yakovenko.
+\newblock Solana: A new architecture for a high performance blockchain.
+\newblock Technical report, Solana Labs, 2017.
+\newblock Accessed on 2025-06-14.
+
+\end{thebibliography}

@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: fichain.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--to sort, need author or key in ebsi2020
+Warning--to sort, need author or key in bsn2020
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            584 strings with 6763 characters,
+and the built_in function-call counts, 4267 in all, are:
+= -- 419
+> -- 157
+< -- 2
++ -- 66
+- -- 48
+* -- 192
+:= -- 725
+add.period$ -- 60
+call.type$ -- 18
+change.case$ -- 80
+chr.to.int$ -- 0
+cite$ -- 20
+duplicate$ -- 161
+empty$ -- 392
+format.name$ -- 48
+if$ -- 913
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 6
+newline$ -- 99
+num.names$ -- 32
+pop$ -- 122
+preamble$ -- 1
+purify$ -- 60
+quote$ -- 0
+skip$ -- 128
+stack$ -- 0
+substring$ -- 142
+swap$ -- 26
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 70
+warning$ -- 2
+while$ -- 37
+width$ -- 20
+write$ -- 201
+(There were 2 warnings)
